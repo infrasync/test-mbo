@@ -1,0 +1,69 @@
+.header {
+  overflow: hidden;
+  padding: 0 var(20px);
+  background-image: radial-gradient(
+    rgba(0, 0, 0, 0) 1px,
+    light-dark(var(--mantine-color-white), var(--mantine-color-dark-9)) 1px
+  );
+  background-size: 4px 4px;
+  backdrop-filter: brightness(100%) blur(5px);
+  background-color: light-dark(
+    rgba(250, 250, 250, 0.625),
+    rgba(0, 0, 0, 0.625)
+  );
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  -webkit-backdrop-filter: brightness(100%) blur(3px); /* For Safari */
+  border-bottom: rem(0.25px) solid
+    light-dark(var(--mantine-color-dark-0), var(--mantine-color-dark-6));
+  border-top: rem(3px) solid var(--mantine-color-yellow-7);
+}
+
+.inner {
+  height: rem(56px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  display: block;
+  line-height: 1;
+  padding: rem(8px) rem(12px);
+  border-radius: var(--mantine-radius-sm);
+  text-decoration: none;
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    width: 90%;
+    height: 2.4rem;
+    display: flex;
+    flex-direction: row;
+    border-radius: 12;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+
+  @mixin hover {
+    background-color: light-dark(
+      var(--mantine-color-dark-0),
+      var(--mantine-color-dark-6)
+    );
+    color: light-dark(var(--mantine-color-dark-6), var(--mantine-color-dark-0));
+    box-shadow: var(--mantine-shadow-lg);
+    cursor: pointer;
+  }
+
+  [data-mantine-color-scheme] &[data-active] {
+    background-color: var(--mantine-color-yellow-8);
+    color: var(--mantine-color-white);
+  }
+}
