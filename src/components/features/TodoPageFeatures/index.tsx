@@ -66,7 +66,6 @@ const TodoPageFeatures: React.FC = () => {
                 checkedArr={checkedArr}
                 setCheckedArr={setCheckedArr}
                 setDeletedTodo={setDeletedTodo}
-                setCheckedId={setCheckedId}
                 key={v.id}
                 {...v}
               />
